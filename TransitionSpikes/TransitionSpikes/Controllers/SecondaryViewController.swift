@@ -37,6 +37,23 @@ class SecondaryViewController: UIViewController {
 
 
 
+  // MARK: - Properties
+
+
+  override var previewActionItems: [UIPreviewActionItem] {
+    let action1 = UIPreviewAction(title: "Action 1", style: .default) { (action, viewController) in
+      print("action 1")
+    }
+
+    let action2 = UIPreviewAction(title: "Action 2", style: .default) { (action, viewController) in
+      print("action 2")
+    }
+
+    return [action1, action2]
+  }
+
+
+
   // MARK: - Private methods
 
   @objc private func didTapDismiss() {

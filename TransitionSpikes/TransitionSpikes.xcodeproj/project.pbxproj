@@ -16,6 +16,8 @@
 		4B7F4AF71F91ACE4008B3E0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B7F4AF51F91ACE4008B3E0F /* Main.storyboard */; };
 		4B7F4AF91F91ACE4008B3E0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B7F4AF81F91ACE4008B3E0F /* Assets.xcassets */; };
 		4B7F4AFC1F91ACE4008B3E0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B7F4AFA1F91ACE4008B3E0F /* LaunchScreen.storyboard */; };
+		4BC2F23120C392EA002D7185 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC2F23020C392EA002D7185 /* CustomViewController.swift */; };
+		4BC2F23320C3933A002D7185 /* CustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC2F23220C3933A002D7185 /* CustomSegue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		4B7F4AF81F91ACE4008B3E0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B7F4AFB1F91ACE4008B3E0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B7F4AFD1F91ACE4008B3E0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BC2F23020C392EA002D7185 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
+		4BC2F23220C3933A002D7185 /* CustomSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +53,7 @@
 				4B6D22361F91E4BD0089054E /* PrimaryViewController.swift */,
 				4B6D22371F91E4BD0089054E /* SecondaryViewController.swift */,
 				4B6D22381F91E4BD0089054E /* TertiaryViewController.swift */,
+				4BC2F23020C392EA002D7185 /* CustomViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -80,6 +85,7 @@
 				4B7F4AF81F91ACE4008B3E0F /* Assets.xcassets */,
 				4B7F4AFA1F91ACE4008B3E0F /* LaunchScreen.storyboard */,
 				4B7F4AFD1F91ACE4008B3E0F /* Info.plist */,
+				4BC2F23220C3933A002D7185 /* CustomSegue.swift */,
 			);
 			path = TransitionSpikes;
 			sourceTree = "<group>";
@@ -157,7 +163,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BC2F23320C3933A002D7185 /* CustomSegue.swift in Sources */,
 				4B6D22341F91BE670089054E /* FadeTransitioner.swift in Sources */,
+				4BC2F23120C392EA002D7185 /* CustomViewController.swift in Sources */,
 				4B6D22391F91E4BD0089054E /* PrimaryViewController.swift in Sources */,
 				4B6D223B1F91E4BD0089054E /* TertiaryViewController.swift in Sources */,
 				4B7F4AF21F91ACE4008B3E0F /* AppDelegate.swift in Sources */,

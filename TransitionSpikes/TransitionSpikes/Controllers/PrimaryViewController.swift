@@ -9,7 +9,7 @@
 import UIKit
 
 
-class PrimaryViewController: UITableViewController, UIViewControllerTransitioningDelegate {
+class PrimaryViewController: UITableViewController, UIViewControllerTransitioningDelegate, UIViewControllerPreviewingDelegate {
 
   // MARK: - Private properties
 
@@ -23,6 +23,8 @@ class PrimaryViewController: UITableViewController, UIViewControllerTransitionin
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    registerForPreviewing(with: self, sourceView: tableView)
   }
 
 
@@ -42,6 +44,9 @@ class PrimaryViewController: UITableViewController, UIViewControllerTransitionin
     case 3:
       navigationController?.pushViewController(SecondaryViewController(), animated: true)
     case 4:
+      // peek
+      present(SecondaryViewController(), animated: true)
+    case 5:
       // custom
       let secondaryViewController = SecondaryViewController()
       secondaryViewController.modalPresentationStyle = .custom
@@ -51,10 +56,33 @@ class PrimaryViewController: UITableViewController, UIViewControllerTransitionin
       
       present(secondaryViewController, animated: true)
     default:
-      // segue
+      // segues
       break
     }
   }
+
+
+
+  // MARK: - UIViewControllerPreviewingDelegate
+
+  func previewingContext(_ previewingContext: UIViewControllerPreviewing,
+                         viewControllerForLocation location: CGPoint) -> UIViewController? {
+    if let indexPath = tableView.indexPathForRow(at: location) {
+      previewingContext.sourceRect = tableView.rectForRow(at: indexPath)
+      return (indexPath.row == 4) ? SecondaryViewController() : nil
+    }
+    return nil
+  }
+
+  func previewingContext(_ previewingContext: UIViewControllerPreviewing,
+                         commit viewControllerToCommit: UIViewController) {
+    present(SecondaryViewController(), animated: true)
+  }
+
+
+  // MARK: - Methods
+
+  @IBAction func unwindSegue(segue: UIStoryboardSegue) { }
 
 }
 
